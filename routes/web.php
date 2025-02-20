@@ -11,7 +11,7 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return view('test');
+    return view('dashboard');
 });
 
 Route::middleware('auth')->group(function () {
