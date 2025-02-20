@@ -16,7 +16,8 @@ class Authadmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->utype === 'ADM') {
+        if (Auth::check()
+            && Auth::user()->utype === 'ADM') {
             return $next($request);
         }
         return redirect()->route('home.index');
