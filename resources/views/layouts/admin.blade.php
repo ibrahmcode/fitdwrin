@@ -30,7 +30,7 @@
 
                 <div class="section-menu-left">
                     <div class="box-logo">
-                        <a href="index.html" id="site-logo-inner">
+                        <a href="{{route('admin.index')}}" id="site-logo-inner">
                             <img class="" id="logo_header" alt="" src="images/logo/logo.png"
                                 data-light="images/logo/logo.png" data-dark="images/logo/logo.png">
                         </a>
@@ -43,7 +43,7 @@
                             <div class="center-heading">Main Home</div>
                             <ul class="menu-list">
                                 <li class="menu-item">
-                                    <a href="index.html" class="">
+                                    <a href="{{route('admin.index')}}" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
                                         <div class="text">Dashboard</div>
                                     </a>
@@ -150,6 +150,16 @@
                                         <div class="icon"><i class="icon-settings"></i></div>
                                         <div class="text">Settings</div>
                                     </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                        @csrf
+                                         <a href="{{ route('logout') }}" class="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="text">Logout</div>
+                                    </a>
+
                                 </li>
                             </ul>
                         </div>
